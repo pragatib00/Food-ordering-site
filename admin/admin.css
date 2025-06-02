@@ -1,0 +1,120 @@
+*{
+   margin: 0;
+   padding: 0;
+   
+}
+.wrapper{
+   padding: 1%;
+   width:80%;
+   margin: 0 auto;
+}
+.text-center{
+   text-align: center;
+}
+.menu ul{
+   list-style-type: none;
+}
+.menu ul li{
+   display: inline;
+   padding: 1%;
+}
+.footer{
+   background-color: rgb(247, 118, 118);
+   color: white;
+}
+.menu ul li a{
+   text-decoration: none;
+   color: rgb(247, 118, 118);
+   font-weight: bold;
+}
+.menu ul li a:hover{
+   color: white;
+   background-color: crimson;
+}
+.menu{
+   border-bottom: 1px solid gray;
+}
+
+.main{
+   background-color: whitesmoke;
+   padding: 3% 0;
+}
+
+.col-4{
+   width: 18%;
+   background: white;
+   margin: 1%;
+   padding: 2%;
+   float: left;
+}
+.clearfix{
+   float:none;
+   clear: both;
+}
+
+.tbl-full{
+   width: 100%;
+}
+table tr th{
+   border-bottom: 1px solid black;
+   padding: 1%;
+   text-align: left;
+}
+table tr td{
+   padding: 1%;
+}
+.btn-primary{
+   background-color: rgb(34, 34, 199);
+   padding: 1%;
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+   
+}
+.btn-primary:hover{
+   background-color:rgb(82, 82, 200) ;
+}
+
+.btn-secondary {
+   background-color: rgb(27, 151, 27);
+   padding: 1%;
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+
+}
+
+.btn-secondary:hover {
+   background-color: rgb(101, 189, 101);
+}
+
+.btn-danger {
+   background-color: rgb(255, 0, 0);
+   padding: 1%;
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+
+}
+
+.btn-danger:hover {
+   background-color: rgba(165, 30, 30, 0.854);
+}
+.tbl-30{
+   width: 30%;
+}
+
+.success{
+   color: green;
+}
+.failed{
+   color: red;
+}
+
+.login{
+
+   width: 20%;
+   border: 1px solid black;
+   margin: 10% auto;
+   padding: 2%;
+}

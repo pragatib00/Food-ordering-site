@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: whitesmoke;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr 300px;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* menu design */
+#menu {
+    background-color: whitesmoke;
+    min-height: 100vh;
+}
+
+.brand-logo {
+    padding: 0 30px;
+}
+
+.brand-logo img {
+    width: 140px;
+    height: 150px;
+    margin-top: -20px;
+}
+
+.menu-item a {
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 8px 30px;
+    margin: 12px 0;
+    color: rgb(128, 129, 129);
+    font-weight: 300;
+}
+
+.menu-item a:hover {
+    background: rgb(252, 197, 197);
+}
+
+.login-container {
+    width: 320px;
+    height: 380px;
+    margin: 100px auto;
+    padding: 20px;
+    text-align: center;
+    background: rgb(241, 240, 240);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-container label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.login-container input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-button {
+    width: 80%;
+    padding: 10px;
+    background-color: rgb(247, 118, 118);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    font-size: 18px;
+}
+
+.login-button:hover {
+    background-color: crimson;
+    color: white;
+}
+
+.login-container p {
+    margin-top: 10px;
+}
+
+/* Mobile view initially hidden on all screens */
+#mobile-view {
+    display: none;
+}
+
+/* Media query for desktop view */
+@media screen and (min-width: 769px) {
+    .container {
+        display: grid;
+    }
+
+    #mobile-view {
+        display: none;
+    }
+}
+
+/* Media query for mobile view */
+@media screen and (max-width: 768px) {
+    .container {
+        display: none;
+    }
+
+    #mobile-view {
+        display: grid;
+        grid-template-rows: 120px 1fr 50px;
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .mobile-top {
+        padding: 15px;
+    }
+
+    .logo-box img {
+        width: 90px;
+        height: 100px;
+    }
+
+    /* Add login form to mobile view */
+    .mobile-login-container {
+        width: 90%;
+        margin: 42px auto;
+        padding: 20px;
+        text-align: center;
+        background: rgb(241, 240, 240);
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-login-container h2 {
+        margin-bottom: 20px;
+
+    }
+
+    .mobile-login-container label {
+        display: block;
+        text-align: left;
+        margin: 10px 0 5px;
+        font-weight: bold;
+    }
+
+    .mobile-login-container input {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .mobile-login-button {
+        width: 80%;
+        padding: 10px;
+        background-color: rgb(247, 118, 118);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s;
+        font-size: 18px;
+    }
+
+    .mobile-login-button:hover {
+        color: white;
+        background: crimson;
+        
+    }
+
+    .mobile-login-container p {
+        margin-top: 10px;
+    }
+
+    .mobile-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
+        background: white;
+        border-top: 1px solid rgb(219, 219, 219);
+
+    }
+
+    .mobile-footer a {
+        color: indianred;
+        text-decoration: none;
+        font-size: 20px;
+
+    }
+}

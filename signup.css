@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    background: whitesmoke;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr 300px;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* menu design */
+#menu {
+    background-color: whitesmoke;
+    min-height: 100vh;
+}
+
+.brand-logo {
+    padding: 0 30px;
+}
+
+.brand-logo img {
+    width: 140px;
+    height: 150px;
+    margin-top: -20px;
+
+}
+
+.menu-item a {
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 8px 30px;
+    margin: 12px 0;
+    color: rgb(128, 129, 129);
+    font-weight: 300;
+}
+
+.menu-item a:hover {
+    background: rgb(252, 197, 197);
+}
+
+.signup-container {
+    width: 360px;
+    margin: 80px auto;
+    padding: 20px;
+    text-align: center;
+    background: rgb(241, 240, 240);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-container h2 {
+    margin-bottom: 20px;
+}
+
+.signup-container label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.signup-container input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-button {
+    width: 80%;
+    padding: 10px;
+    background-color: rgb(247, 118, 118);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    font-size: 18px;
+}
+
+.signup-button:hover {
+    
+    background: crimson;
+}
+.signup-container p {
+    margin-top: 10px;
+}
