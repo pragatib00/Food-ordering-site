@@ -7,40 +7,80 @@
                 
                 <br><br><br>
 
+                <?php
+                    if(isset($_SESSION['add'])){
+                        echo $_SESSION['add'];
+                        unset($_SESSION['add']);
+                    }
+                ?>
+
                 <table class="tbl-full">
                     <tr>
                         <th>S.N</th>
-                        <th>Fullname</th>
-                        <th>Username</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Featured</th>
+                        <th>Active</th>
                         <th>Actions</th>
+                
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Pragati Basnet</td>
-                        <td>pragatib</td>
-                        <td>
-                            <a href="#" class="btn-secondary">Update Admin</a>
-                            <a href="#" class="btn-danger">Delete Admin</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Misha Thapa</td>
-                        <td>mish</td>
-                        <td>
-                            <a href="#" class="btn-secondary">Update Admin</a>
-                            <a href="#" class="btn-danger">Delete Admin</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Pragati Basnet</td>
-                        <td>pragatib</td>
-                        <td>
-                            <a href="#" class="btn-secondary">Update Admin</a>
-                            <a href="#" class="btn-danger">Delete Admin</a>
-                        </td>
-                    </tr>
+                    <?php
+                    //sql query to get all the food detail
+                    $sql="SELECT * FROM tbl_food";
+                    $res=mysqli_query($conn,$sql);
+                    $count=mysqli_num_rows($res);
+                    $sn=1;
+                    if($count>0){
+
+                        while($row=mysqli_fetch_assoc($res)){
+                            $id=$row['id'];
+                            $title=$row['title'];
+                            $price=$row['price'];
+                            $image_name=$row['image_name'];
+                            $featured=$row['featured'];
+                            $active=$row['active'];
+                            ?>
+                             <tr>
+                               <td><?php echo $sn++;?></td>
+                               <td><?php echo $title;?></td>
+                               <td>$<?php echo $price;?></td>
+                               <td>
+                                  <?php
+                                  //whether we have image or not
+                                  if($image_name===""){
+
+                                    echo "<div class='failed'>Image not added</div>";
+
+                                  }
+                                  else{
+                                    ?>
+                                    <img src='<?php echo SITEURL;?>slider/food/<?php echo $image_name?>' width='100px';
+                                    <?php
+                                  }
+
+                                  ?>
+                               </td>
+                               <td><?php echo $featured;?></td>
+                               <td><?php echo $active;?></td>
+                               <td>
+                                 <a href="#" class="btn-secondary">Update Food</a>
+                                 <a href="#" class="btn-danger">Delete Food</a>
+                                </td>
+                             </tr>
+                            <?php
+                           
+                        }
+
+                    }
+                    else{
+
+                        echo"<tr><td colspan='7' class='failed'>Food not added yet</td></tr>";
+
+                    }
+                    ?>
+                   
+                    
                 </table>
     </div>
     
