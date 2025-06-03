@@ -11,7 +11,15 @@
         </div>
         <div class="container">
 
-            <h2 style="color: white;">Foods on Your Search<a href="#" class="text-white">"Momo"</a></h2>
+            <?php
+
+                 //get the search keyword
+
+                 $search= $_POST['search'];
+
+            ?>
+
+            <h2 style="color: white;">Foods on Your Search<a href="#" class="text-white">"<?php echo $search;?>"</a></h2>
 
         </div>
     </section>
@@ -23,98 +31,78 @@
     <section class="food-menu">
         <div class="container">
             <h2 class="text-center">Our Menus</h2>
-            <div class="slider-wrap"></div>
+            
+            <?php
+
+               
+
+                $sql="SELECT * FROM tbl_food WHERE title LIKE'%$search%' OR description LIKE '%$search%'";
+
+                $res=mysqli_query($conn,$sql);
+
+                $count = mysqli_num_rows($res);
+
+                if($count>0){
+
+                    while($row=mysqli_fetch_assoc($res)){
+
+                        $id=$row['id'];
+                        $title=$row['title'];
+                        $price=$row['price'];
+                        $description = $row['description'];
+                        $image_name=$row['image_name'];
+
+                        ?>
+                        <div class="food-menu-box">
+                            <div class="food-menu-img">
+                                <?php
+
+                                    if($image_name==""){
+
+                                        echo"<div class='failed'>Image not found</div>";
+
+                                    }
+                                    else{
+
+                                        ?>
+                                            <img src="<?php echo SITEURL;?>slider/food/<?php echo $image_name;?>" alt="Chicken Hawain Pizza" class="imgres">
+                                        <?php
+
+                                    }
+
+                                ?>
+                                
+                            </div>
+                            <div class="food-menu-description">
+                                <h4><?php echo $title;?></h4>
+                                <p class="food-price">$<?php echo $price;?></p>
+                                <p class="food-data">
+                                    <?php echo $description;?>
+                                </p>
+                                <br>
+                                <a href="order.html" class="button button-primary">Order Now</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <?php
+
+        
+
+
+                    }
+
+                }
+                else{
+
+                    echo"<div class='failed'>Food not available</div>";
+                }
+
+
+                
+            ?>
     
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="slider/image3.jpg" alt="Chicken Hawain Pizza" class="imgres">
-                </div>
-                <div class="food-menu-description">
-                    <h4>Pizza</h4>
-                    <p class="food-price">$2.3</p>
-                    <p class="food-data">
-                        Made with Italian Sauce, Chicken, and organic vegetables.
-                    </p>
-                    <br>
-                    <a href="order.html" class="button button-primary">Order Now</a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="slider/image.1.jpg" alt="Chicken Hawain Pizza" class="imgres">
-                </div>
-                <div class="food-menu-description">
-                    <h4>Momo</h4>
-                    <p class="food-price">$2.3</p>
-                    <p class="food-data">
-                        Made with Italian Sauce, Chicken, and organic vegetables.
-                    </p>
-                    <br>
-                    <a href="order.html" class="button button-primary">Order Now</a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="slider/image6.webp" alt="Chicken Hawain Pizza" class="imgres">
-                </div>
-                <div class="food-menu-description">
-                    <h4>Biryani</h4>
-                    <p class="food-price">$2.3</p>
-                    <p class="food-data">
-                        Made with Italian Sauce, Chicken, and organic vegetables.
-                    </p>
-                    <br>
-                    <a href="order.html" class="button button-primary">Order Now</a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="slider/image5.jpg" alt="Chicken Hawain Pizza" class="imgres">
-                </div>
-                <div class="food-menu-description">
-                    <h4>Chicken Leg piece</h4>
-                    <p class="food-price">$2.3</p>
-                    <p class="food-data">
-                        Made with Italian Sauce, Chicken, and organic vegetables.
-                    </p>
-                    <br>
-                    <a href="order.html" class="button button-primary">Order Now</a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="slider/image7.jpg" alt="Chicken Hawain Pizza" class="imgres">
-                </div>
-                <div class="food-menu-description">
-                    <h4>Dessert</h4>
-                    <p class="food-price">$2.3</p>
-                    <p class="food-data">
-                        Made with Italian Sauce, Chicken, and organic vegetables.
-                    </p>
-                    <br>
-                    <a href="order.html" class="button button-primary">Order Now</a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="slider/image4.jpg" alt="Chicken Hawain Pizza" class="imgres">
-                </div>
-                <div class="food-menu-description">
-                    <h4>Chowmein</h4>
-                    <p class="food-price">$2.3</p>
-                    <p class="food-data">
-                        Made with Italian Sauce, Chicken, and organic vegetables.
-                    </p>
-                    <br>
-                    <a href="order.html" class="button button-primary">Order Now</a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
+           
     
     
             <div class="clearfix"></div>

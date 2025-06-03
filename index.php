@@ -11,41 +11,78 @@
     
         <!-- Your existing content -->
         <div class="container">
-            <form action="">
+            <form action="<?php echo SITEURL;?>food-search.php"method="POST">
                 <input type="search" name="search" placeholder="search for food">
                 <input type="submit" name="submit" value="Search" class="button button-primary">
             </form>
         </div>
     </section>
 
-    <section class="category">
-        <div class="container">
-            <h2 class="text-center">Explore Foods!!</h2>
-            <div class="slider-wrap">
-            
-                <img src="slider/left.png" id="backbtn">
-                <div class="slider">
-                    <div>
-                        <span><img src="slider/momo.webp"></span>
-                        <span><img src="slider/burger.jpg"></span>
-                        <span><img src="slider/pizza.jpg"></span>
-                    </div>
-                    <div>
-                        <span><img src="slider/chowmein.jpg"></span>
-                        <span><img src="slider/biryani.webp"></span>
-                        <span><img src="slider/chicken leg fries.jpg"></span>
-                    </div>
-                    <div>
-                        <span><img src="slider/dessert.jpg"></span>
-                        <span><img src="slider/sandwich.webp"></span>
-                        <span><img src="slider/boba-tea.avif"></span>
-                    </div>
-                </div>
-                <img src="slider/left.png" id="nextbtn">
-            </div>
-        </div>
-    </section>
+    <?php
+// Fetch categories from database
+$sql = "SELECT * FROM tbl_category WHERE active='Yes' AND featured='Yes' LIMIT 9";
+$res = mysqli_query($conn, $sql);
 
+// Create an array to store category data
+$categories = array();
+if($res == TRUE) {
+    while($row = mysqli_fetch_assoc($res)) {
+        $categories[] = $row;
+    }
+}
+
+// Map images to categories (you'll need to adjust this based on your image names)
+$category_images = array(
+    'Momo' => 'slider/momo.webp',
+    'Burger' => 'slider/burger.jpg',
+    'Pizza' => 'slider/pizza.jpg',
+    'Chowmein' => 'slider/chowmein.jpg',
+    'Biryani' => 'slider/biryani.webp',
+    'Chicken' => 'slider/chicken leg fries.jpg',
+    'Dessert' => 'slider/dessert.jpg',
+    'Sandwich' => 'slider/sandwich.webp',
+    'Boba Tea' => 'slider/boba-tea.avif'
+);
+?>
+
+<section class="category">
+    <div class="container">
+        <h2 class="text-center">Explore Foods!!</h2>
+        <div class="slider-wrap">
+            <img src="slider/left.png" id="backbtn">
+            <div class="slider">
+                <?php
+                $count = 0;
+                foreach($categories as $category) {
+                    if($count % 3 == 0) echo '<div>'; // Start new row every 3 items
+                    
+                    // Find matching image for this category
+                    $image_src = 'slider/default.jpg'; // default image
+                    foreach($category_images as $cat_name => $image_path) {
+                        if(stripos($category['title'], $cat_name) !== false) {
+                            $image_src = $image_path;
+                            break;
+                        }
+                    }
+                ?>
+                    <span>
+                        <a href="<?php echo SITEURL;?>category-foods.php?category_id=<?php echo $category['id']; ?>">
+                            <img src="<?php echo $image_src; ?>" alt="<?php echo $category['title']; ?>">
+                        </a>
+                    </span>
+                <?php
+                    $count++;
+                    if($count % 3 == 0) echo '</div>'; // Close row every 3 items
+                }
+                
+                // Close the last div if needed
+                if($count % 3 != 0) echo '</div>';
+                ?>
+            </div>
+            <img src="slider/left.png" id="nextbtn">
+        </div>
+    </div>
+</section>
     <section class="food-menu">
         <div class="container">
             <h2 class="text-center">Our Menus</h2>

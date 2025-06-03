@@ -11,7 +11,7 @@
         </div>
         <div class="container">
 
-            <form action="food-search.html" method="POST">
+            <form action="<?php echo SITEURL;?>food-search.php" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>
                 <input type="submit" name="submit" value="Search" class="button button-primary">
             </form>
