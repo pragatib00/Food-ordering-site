@@ -121,11 +121,13 @@ h3{
     float: left;
     margin: 2%;
 }
-.float-text{
+.float-text {
     position: absolute;
-    bottom: 50px;
-    left: 40%;
+    bottom: 30px;
+    left: 0;
+    right: 0;
     color: white;
+    text-align: center;
 }
 .food-menu{
     background-color: whitesmoke;
