@@ -73,7 +73,7 @@
                                 }
                                 else{
                                     ?>
-                                    <option vlaue='0'>No Category Found</option>
+                                    <option value='0'>No Category Found</option>
                                     <?php
 
                                 }
