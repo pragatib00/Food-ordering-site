@@ -331,7 +331,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h3>Find Us</h3>
                 <div class="map-placeholder">
                     🗺️ Interactive Map Coming Soon<br>
-                    <small>Location: Kathmandu, Nepal</small>
+                    <small>Location: Lalitpur, Nepal</small>
                 </div>
             </div>
         </div>
