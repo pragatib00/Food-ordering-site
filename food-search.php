@@ -80,7 +80,7 @@
                                     <?php echo $description;?>
                                 </p>
                                 <br>
-                                <a href="order.html" class="button button-primary">Order Now</a>
+                                <a href="<?php echo SITEURL;?>order.php?food_id=<?php echo $id;?>" class="button button-primary">Order Now</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
