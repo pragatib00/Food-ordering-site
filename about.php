@@ -272,22 +272,22 @@
                     <div class="team-member">
                         <div class="team-avatar">PB</div>
                         <h3>Pragati Basnet</h3>
-                        <p>Founder & CEO</p>
+                        <p>Backend Developer</p>
                     </div>
                     <div class="team-member">
                         <div class="team-avatar">AN</div>
                         <h3>Aakriti Neupane</h3>
-                        <p>Head of Operations</p>
+                        <p>Data Analyst</p>
                     </div>
                     <div class="team-member">
                         <div class="team-avatar">KB</div>
                         <h3>Kanchan Budathoki</h3>
-                        <p>Tech Lead</p>
+                        <p>Frontend Developer</p>
                     </div>
                     <div class="team-member">
                         <div class="team-avatar">ND</div>
                         <h3>Nisha Dahal</h3>
-                        <p>Customer Success</p>
+                        <p>Frontend Developer</p>
                     </div>
                 </div>
             </div>
