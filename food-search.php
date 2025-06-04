@@ -19,7 +19,7 @@
 
             ?>
 
-            <h2 style="color: white;">Foods on Your Search<a href="#" class="text-white">"<?php echo $search;?>"</a></h2>
+            <h2 style="color: white;" class="animated-heading">Foods on Your Search<a href="#" class="text-white animated-heading">"<?php echo $search;?>"</a></h2>
 
         </div>
     </section>

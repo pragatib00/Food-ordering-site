@@ -10,7 +10,8 @@
 
     <section class="footer">
         <div class="container text-center">
-            <p>All rights reserved. Designed By <a href="#">Pragati Basnet</a></p>
+       <p> © 2025 Yumkart. All rights reserved. </p>
+
         </div>
     </section>
 </body>

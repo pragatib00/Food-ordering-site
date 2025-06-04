@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="container">
-        <h2 style="color: white;">Foods on <a href="#" class="text-white">"<?php echo $category_title;?>"</a></h2>
+        <h2 style="color: white;"class="animated-heading">Foods on <a href="#" class="text-white animated-heading">"<?php echo $category_title;?>"</a></h2>
     </div>
 </section>
 <!-- fOOD sEARCH Section Ends Here -->

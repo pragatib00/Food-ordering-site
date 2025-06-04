@@ -22,10 +22,10 @@
         <div class="menu">
             <ul>
                 <li><a href="<?php echo SITEURL;?>">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="<?php echo SITEURL;?>about.php">About</a></li>
                 <li><a href="<?php echo SITEURL;?>categories.php">Category</a></li>
                 <li><a href="<?php echo SITEURL;?>foods.php">Foods</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="<?php echo SITEURL;?>contact.php">Contact</a></li>
                 <li><a href="login.php"><button class="button button-primary">Login</button></a></li>
             </ul>
         </div>

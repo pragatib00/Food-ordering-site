@@ -14,8 +14,17 @@
     float: left;
 
 }
-.img-responsive {
+.img-responsive{
     width: 100%;
+}
+.img-responsive.img-curve {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.img-responsive.img-curve:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .img-curve {
@@ -83,10 +92,30 @@ a:hover{
 .button-primary{
     background-color: rgb(247, 118, 118);
     color: white;
+   
 }
 .button-primary:hover{
     background-color: crimson;
     color: white;
+    
+}
+.animated-heading {
+    animation: fadeInUp 1s ease;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+/* Keyframes for fadeInUp animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 h2{
@@ -137,10 +166,18 @@ h3{
 
     width: 43%;
     margin: 1%;
+    transition: all 0.3s ease;
+    cursor: pointer;
     padding: 2%;
     float: left;
     background-color: white;
     border-radius: 15px;
+}
+.food-menu-box:hover{
+
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+
 }
 .food-menu-img{
     float: left;

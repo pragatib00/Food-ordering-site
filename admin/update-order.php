@@ -114,7 +114,6 @@ if(isset($_POST['submit'])) {
                             <option value="Ordered" <?php if($current_status == "Ordered") echo "selected"; ?>>Ordered</option>
                             <option value="On Delivery" <?php if($current_status == "On Delivery") echo "selected"; ?>>On Delivery</option>
                             <option value="Delivered" <?php if($current_status == "Delivered") echo "selected"; ?>>Delivered</option>
-                            <option value="Cancelled" <?php if($current_status == "Cancelled") echo "selected"; ?>>Cancelled</option>
                         </select>
                     </td>
                 </tr>

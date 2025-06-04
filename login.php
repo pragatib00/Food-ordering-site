@@ -46,15 +46,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div id="container" class="container">
         <div id="menu">
             <div class="brand-logo">
-                <a href="index.html"><img src="slider/yumkart-removebg-preview.png" alt="logo"></a>
+                <a href="<?php echo SITEURL;?>"><img src="slider/yumkart-removebg-preview.png" alt="logo"></a>
             </div>
             <div class="menu-item">
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Your Orders</a>
-                <a href="#">Wishlist</a>
-                <a href="#">Address</a>
-                <a href="#">Help</a>
+                <a href="<?php echo SITEURL;?>about.php">About</a>
+                <a href="<?php echo SITEURL;?>categories.php">Category</a>
+                <a href="<?php echo SITEURL;?>foods.php">Foods</a>
+                <a href="<?php echo SITEURL;?>contact.php">Contact</a>
+
+                
             </div>
         </div>
 
