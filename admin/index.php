@@ -36,6 +36,18 @@
                     Foods
                 </div>
 
+                <div class="col-4 text-center">
+                <?php
+                        $sql6="SELECT * FROM tbl_user";
+                        $res6=mysqli_query($conn,$sql6);
+                        $count6=mysqli_num_rows($res6);
+
+                    ?>
+                    <h1><?php echo $count6 ;?></h1>
+                    <br>
+                    Users
+                </div>
+
                  <div class="col-4 text-center">
                  <?php
                         $sql3="SELECT * FROM tbl_order";

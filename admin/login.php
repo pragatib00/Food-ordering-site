@@ -31,7 +31,7 @@
                 <input type="submit" name="submit" value="login" class="btn-primary">
             </form>
 
-            <p class="text-center">Created by <a href="#">Pragati Basnet</a></p>
+            <p class="text-center">Created by <a href="#">YumKart</a></p>
         </div>
     </body>
 
