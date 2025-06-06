@@ -4,7 +4,7 @@ $loginMessage = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password_input = $_POST['password'];
+    $password_input = mysqli_real_escape_string($conn,$_POST['password']);
 
     $sql = "SELECT * FROM tbl_user WHERE email='$email'";
     $res = mysqli_query($conn, $sql);
@@ -84,30 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <img src="/slider/yumkartt.png" alt="logo">
             </div>
         </div>
-
-        <div class="mobile-login-container">
-            <h2>Login to YumKart</h2>
-            <form action="" method="POST" id="mobileLoginForm">
-                <label for="mobile-email">Email</label>
-                <input type="email" id="mobile-email" placeholder="Enter your email" name="email" required>
-                <br>
-                <label for="mobile-password">Password</label>
-                <input type="password" id="mobile-password" placeholder="********" name="password" required>
-                <br>
-                <?php echo $loginMessage; ?><br><br>
-                <button type="submit" class="login-button">Login</button>
-            </form>
-            <p><a href="forget_password.php">Forgot Password?</a></p>
-            <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
-        </div>
-
-        <div class="mobile-footer">
-            <a href="index.html">Home</a>
-            <a href="#">Cart</a>
-            <a href="#">Offers</a>
-            <a href="#">Orders</a>
-        </div>
-    </div>
 </body>
 
 </html>
