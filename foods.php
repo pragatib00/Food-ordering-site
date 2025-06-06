@@ -4,9 +4,9 @@
     <section class="food-search text-center" style="position: relative; padding: 13% 0;">
         <!-- Background image with overlay div -->
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;">
-            <img src="slider/bg.webp" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="slider/menuback.jpg" style="width: 100%; height: 100%; object-fit: cover;">
             <div
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.65);">
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.45);">
             </div>
         </div>
         <div class="container">

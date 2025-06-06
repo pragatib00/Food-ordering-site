@@ -3,7 +3,7 @@
     <section class="food-search text-center" style="position: relative; padding: 13% 0;">
         <!-- Background image with overlay div -->
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;">
-            <img src="slider/bg.webp" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="slider/background.jpg" style="width: 100%; height: 100%; object-fit: cover;">
             <div
                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.65);">
             </div>
@@ -40,7 +40,7 @@ $category_images = array(
     'Pizza' => 'slider/pizza.jpg',
     'Chowmein' => 'slider/chowmein.jpg',
     'Biryani' => 'slider/biryani.webp',
-    'Chicken' => 'slider/chicken leg fries.jpg',
+    'Chicken' => 'slider/chicken.jpg',
     'Dessert' => 'slider/dessert.jpg',
     'Sandwich' => 'slider/sandwich.webp',
     'Boba Tea' => 'slider/boba-tea.avif'
@@ -165,7 +165,7 @@ $category_images = array(
             
         </div>
         <p class="text-center">
-            <a href="#">See All Foods</a>
+            <a href="<?php echo SITEURL;?>foods.php">See All Foods</a>
         </p>
     </section>
 
